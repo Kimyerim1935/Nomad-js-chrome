@@ -1,15 +1,16 @@
+const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
-const loginButton = document.querySelector('#login-form button');
+const greeting = document.querySelector("#greeting");
 
-const handleClick = () => {
+const HIDDEN_CLASSNAME = 'hidden';
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+  loginForm.classList.add(HIDDEN_CLASSNAME);
   const userName = loginInput.value;
-
-  if (userName.length === 0) {
-    alert('이름을 입력해주세요')
-
-  } else if (userName.length > 15) {
-    alert('이름이 너무 길어요');
-  }
+  greeting.innerText = "Hello " + userName;
+  greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
-loginButton.addEventListener('click', handleClick);
+
+loginForm.addEventListener('submit', handleSubmit);
