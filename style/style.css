@@ -1,3 +1,8 @@
 .hidden {
     display: none;
 }
+
+.bgSize {
+    width: 100%;
+    height: 100%;
+}
